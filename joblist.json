@@ -1,0 +1,347 @@
+[
+  {
+    "title": "Frontend Developer",
+    "company": "TechNova Solutions",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹6L – ₹10L",
+    "skills": "React, JavaScript, CSS",
+    "description": "Build responsive UI and collaborate with backend teams to create scalable applications."
+  },
+  {
+    "title": "Backend Developer",
+    "company": "CodeSphere Pvt Ltd",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹7L – ₹12L",
+    "skills": "Node.js, Express, MongoDB",
+    "description": "Develop and maintain APIs and server-side logic for web applications."
+  },
+  {
+    "title": "UI/UX Designer",
+    "company": "PixelCraft Studio",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Design",
+    "salary": "₹4L – ₹8L",
+    "skills": "Figma, Adobe XD, UI Design",
+    "description": "Design intuitive user interfaces and improve user experience across platforms."
+  },
+  {
+    "title": "Digital Marketing Executive",
+    "company": "GrowthHub",
+    "location": "Mumbai",
+    "type": "Full-time",
+    "category": "Marketing",
+    "salary": "₹3L – ₹6L",
+    "skills": "SEO, SEM, Social Media",
+    "description": "Plan and execute digital campaigns to improve brand visibility."
+  },
+  {
+    "title": "Sales Manager",
+    "company": "PrimeEdge Sales",
+    "location": "Delhi",
+    "type": "Full-time",
+    "category": "Sales",
+    "salary": "₹5L – ₹9L",
+    "skills": "Negotiation, CRM, Communication",
+    "description": "Lead sales teams and drive revenue growth through strategic planning."
+  },
+  {
+    "title": "Mechanical Engineer",
+    "company": "AutoTech Industries",
+    "location": "Pune",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹4L – ₹8L",
+    "skills": "CAD, SolidWorks, Manufacturing",
+    "description": "Design and develop mechanical systems for industrial applications."
+  },
+  {
+    "title": "Accountant",
+    "company": "FinEdge Corp",
+    "location": "Coimbatore",
+    "type": "Full-time",
+    "category": "Finance",
+    "salary": "₹3L – ₹7L",
+    "skills": "Tally, Excel, Accounting",
+    "description": "Manage financial records and ensure compliance with regulations."
+  },
+  {
+    "title": "Nurse",
+    "company": "CarePlus Hospitals",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Healthcare",
+    "salary": "₹2L – ₹5L",
+    "skills": "Patient Care, Nursing, First Aid",
+    "description": "Provide patient care and assist doctors in medical procedures."
+  },
+  {
+    "title": "Teacher",
+    "company": "BrightFuture School",
+    "location": "Madurai",
+    "type": "Full-time",
+    "category": "Education",
+    "salary": "₹2L – ₹4L",
+    "skills": "Teaching, Communication",
+    "description": "Teach students and create engaging lesson plans."
+  },
+  {
+    "title": "Full Stack Developer",
+    "company": "NextGen Tech",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹8L – ₹14L",
+    "skills": "React, Node.js, MongoDB",
+    "description": "Work on both frontend and backend systems to build scalable apps."
+  },
+
+  {
+    "title": "HR Executive",
+    "company": "PeopleFirst HR",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Marketing",
+    "salary": "₹3L – ₹5L",
+    "skills": "Recruitment, Communication",
+    "description": "Handle recruitment and employee engagement activities."
+  },
+  {
+    "title": "Electrical Engineer",
+    "company": "VoltTech",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹5L – ₹9L",
+    "skills": "Circuit Design, Electrical Systems",
+    "description": "Design and maintain electrical systems."
+  },
+  {
+    "title": "Data Analyst",
+    "company": "Insight Analytics",
+    "location": "Mumbai",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹6L – ₹11L",
+    "skills": "Python, SQL, Excel",
+    "description": "Analyze data and generate insights for business decisions."
+  },
+  {
+    "title": "Graphic Designer",
+    "company": "DesignHive",
+    "location": "Delhi",
+    "type": "Full-time",
+    "category": "Design",
+    "salary": "₹3L – ₹6L",
+    "skills": "Photoshop, Illustrator",
+    "description": "Create visual designs for marketing materials."
+  },
+  {
+    "title": "Content Writer",
+    "company": "WriteWave",
+    "location": "Remote",
+    "type": "Remote",
+    "category": "Marketing",
+    "salary": "₹2L – ₹5L",
+    "skills": "Writing, SEO",
+    "description": "Write engaging content for blogs and websites."
+  },
+
+  {
+    "title": "Software Tester",
+    "company": "BugTrack Systems",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹4L – ₹7L",
+    "skills": "Manual Testing, Selenium",
+    "description": "Test software and ensure quality standards."
+  },
+  {
+    "title": "Marketing Manager",
+    "company": "AdVantage",
+    "location": "Mumbai",
+    "type": "Full-time",
+    "category": "Marketing",
+    "salary": "₹8L – ₹15L",
+    "skills": "Marketing Strategy, SEO",
+    "description": "Lead marketing campaigns and branding efforts."
+  },
+  {
+    "title": "Civil Engineer",
+    "company": "BuildPro",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹5L – ₹10L",
+    "skills": "AutoCAD, Construction",
+    "description": "Plan and oversee construction projects."
+  },
+  {
+    "title": "Pharmacist",
+    "company": "MediCare Pharma",
+    "location": "Coimbatore",
+    "type": "Full-time",
+    "category": "Healthcare",
+    "salary": "₹3L – ₹6L",
+    "skills": "Pharmacy, Medicine Knowledge",
+    "description": "Dispense medicines and guide patients."
+  },
+  {
+    "title": "Bank Clerk",
+    "company": "SafeBank",
+    "location": "Delhi",
+    "type": "Full-time",
+    "category": "Finance",
+    "salary": "₹2L – ₹4L",
+    "skills": "Banking, Communication",
+    "description": "Assist customers with banking services."
+  },
+
+  {
+    "title": "DevOps Engineer",
+    "company": "CloudOps",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹10L – ₹18L",
+    "skills": "AWS, Docker, CI/CD",
+    "description": "Manage cloud infrastructure and deployment pipelines."
+  },
+  {
+    "title": "Product Manager",
+    "company": "InnovateX",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹12L – ₹20L",
+    "skills": "Product Strategy, Agile",
+    "description": "Define product roadmap and coordinate teams."
+  },
+
+  {
+    "title": "Interior Designer",
+    "company": "SpaceCraft",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Design",
+    "salary": "₹4L – ₹9L",
+    "skills": "3D Design, AutoCAD",
+    "description": "Design interior spaces creatively."
+  },
+
+  {
+    "title": "SEO Specialist",
+    "company": "SearchBoost",
+    "location": "Remote",
+    "type": "Remote",
+    "category": "Marketing",
+    "salary": "₹3L – ₹7L",
+    "skills": "SEO, Google Analytics",
+    "description": "Optimize websites for search engines."
+  },
+  {
+    "title": "Mechanical Design Engineer",
+    "company": "AutoMech Systems",
+    "location": "Pune",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹5L – ₹10L",
+    "skills": "SolidWorks, AutoCAD, CAD Design, Manufacturing",
+    "description": "Design mechanical components using CAD tools and support product development processes."
+  },
+  {
+    "title": "CAD Engineer",
+    "company": "DesignForge Pvt Ltd",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹4L – ₹8L",
+    "skills": "AutoCAD, SolidWorks, Drafting",
+    "description": "Create 2D/3D models and technical drawings for engineering projects."
+  },
+  {
+    "title": "CAM Programmer",
+    "company": "PrecisionWorks",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹6L – ₹12L",
+    "skills": "EdgeCAM, CNC Programming, Machining",
+    "description": "Develop CNC programs for milling and turning operations."
+  },
+  {
+    "title": "CNC Production Engineer",
+    "company": "Machina Industries",
+    "location": "Coimbatore",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹4L – ₹9L",
+    "skills": "CNC Turning, CNC Milling, Manufacturing",
+    "description": "Oversee CNC operations and improve production efficiency."
+  },
+  {
+    "title": "Simulation Engineer",
+    "company": "SimuTech Labs",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹7L – ₹14L",
+    "skills": "ANSYS, Structural Analysis, Thermal Analysis",
+    "description": "Perform simulations and analyze structural and thermal performance."
+  },
+  {
+    "title": "Manufacturing Engineer",
+    "company": "LeanWorks Pvt Ltd",
+    "location": "Chennai",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹5L – ₹11L",
+    "skills": "Lean Manufacturing, 5S, Quality Control",
+    "description": "Improve manufacturing processes and ensure quality standards."
+  },
+  {
+    "title": "Quality Control Engineer",
+    "company": "QCheck Industries",
+    "location": "Pune",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹4L – ₹8L",
+    "skills": "Quality Control, Inspection, Manufacturing",
+    "description": "Ensure product quality through inspection and testing processes."
+  },
+  {
+    "title": "Production Engineer",
+    "company": "ForgeTech",
+    "location": "Coimbatore",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹4L – ₹9L",
+    "skills": "Production Planning, CNC, Manufacturing",
+    "description": "Manage production processes and optimize output."
+  },
+  {
+    "title": "IoT Manufacturing Engineer",
+    "company": "SmartFactory Solutions",
+    "location": "Bangalore",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "₹8L – ₹15L",
+    "skills": "IoT, Python, Automation",
+    "description": "Integrate IoT solutions into manufacturing systems for automation."
+  },
+  {
+    "title": "Mechanical Project Engineer",
+    "company": "BuildMech Projects",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "category": "Engineering",
+    "salary": "₹6L – ₹12L",
+    "skills": "Project Management, CAD, Team Leadership",
+    "description": "Manage engineering projects and coordinate cross-functional teams."
+  }
+]

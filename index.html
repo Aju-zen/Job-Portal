@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobConnect – Find Your Dream Job</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#" onclick="showPage('home')">⚡ JobConnect</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a href="#" onclick="showPage('jobs')" id="nav-jobs">Jobs</a></li>
+    <li><a href="#" onclick="showPage('post-job')" id="nav-post">Post Job</a></li>
+    <li><a href="#" onclick="showPage('login')" id="nav-login">Login</a></li>
+    <li><a href="#" onclick="showPage('register')" class="btn-nav" id="nav-register">Register</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <h1>Find Your <span>Dream Job</span></h1>
+    <p>Connect with top employers and discover thousands of opportunities</p>
+    <div class="search-bar">
+      <input type="text" id="heroSearch" placeholder="Job title, keyword, or company..." />
+      <button onclick="searchJobs()">🔍 Search</button>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><strong>12,400+</strong><span>Jobs Available</span></div>
+    <div class="stat"><strong>3,200+</strong><span>Companies</span></div>
+    <div class="stat"><strong>85,000+</strong><span>Job Seekers</span></div>
+    <div class="stat"><strong>9,800+</strong><span>Placements</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Browse by Category</div>
+    <div class="section-sub">Explore jobs across popular industries</div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+
+  <div class="section" style="background: var(--light); max-width:100%; padding: 3rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-title">Featured Job Listings</div>
+      <div class="section-sub">Hand-picked opportunities from top companies</div>
+      <div class="jobs-grid" id="featuredJobs"></div>
+      <div style="text-align:center; margin-top:2rem;">
+        <button class="btn btn-outline" onclick="showPage('jobs')">View All Jobs →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== JOBS PAGE ==================== -->
+<div class="page" id="page-jobs">
+  <div class="section">
+    <h2 class="section-title">All Job Listings</h2>
+    <p class="section-sub">Find the perfect role for you</p>
+    <div class="filters-bar">
+      <input type="text" id="filterSearch" placeholder="🔍 Search jobs..." oninput="filterJobs()" />
+      <select id="filterCategory" onchange="filterJobs()">
+        <option value="">All Categories</option>
+        <option>Technology</option>
+        <option>Design</option>
+        <option>Marketing</option>
+        <option>Finance</option>
+        <option>Healthcare</option>
+        <option>Education</option>
+      </select>
+      <select id="filterLocation" onchange="filterJobs()">
+        <option value="">All Locations</option>
+        <option>New York</option>
+        <option>San Francisco</option>
+        <option>Austin</option>
+        <option>Chicago</option>
+        <option>Remote</option>
+      </select>
+      <select id="filterType" onchange="filterJobs()">
+        <option value="">All Types</option>
+        <option>Full-time</option>
+        <option>Part-time</option>
+        <option>Contract</option>
+        <option>Remote</option>
+      </select>
+    </div>
+    <div id="jobCount" style="color:var(--gray); font-size:0.9rem; margin-bottom:1rem;"></div>
+    <div class="jobs-grid" id="allJobsGrid"></div>
+  </div>
+</div>
+
+<!-- ==================== JOB DETAILS PAGE ==================== -->
+<div class="page" id="page-job-detail">
+  <div class="job-detail-container">
+    <button class="back-btn" onclick="showPage('jobs')">← Back to Jobs</button>
+    <div id="jobDetailContent"></div>
+  </div>
+</div>
+
+<!-- ==================== LOGIN PAGE ==================== -->
+<div class="page" id="page-login">
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Welcome Back</h2>
+      <p>Sign in to your account</p>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com" id="loginEmail" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" id="loginPass" />
+      </div>
+      <div class="form-group">
+        <label>Login As</label>
+        <select id="loginRole">
+          <option value="seeker">Job Seeker</option>
+          <option value="employer">Employer</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="handleLogin()">Sign In</button>
+      <div class="auth-switch">Don't have an account? <a href="#" onclick="showPage('register')">Register</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== REGISTER PAGE ==================== -->
+<div class="page" id="page-register">
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Create Account</h2>
+      <p>Join thousands of job seekers and employers</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="John" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Doe" /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@example.com" /></div>
+      <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••" /></div>
+      <div class="form-group">
+        <label>I am a</label>
+        <select>
+          <option>Job Seeker</option>
+          <option>Employer</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="handleRegister()">Create Account</button>
+      <div class="auth-switch">Already have an account? <a href="#" onclick="showPage('login')">Sign In</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SEEKER DASHBOARD ==================== -->
+<div class="page" id="page-seeker">
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <div class="avatar">A</div>
+        <h4>Alex Johnson</h4>
+        <p>Job Seeker</p>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" onclick="seekerTab('overview',this)"><span class="icon">🏠</span> Overview</a></li>
+        <li><a href="#" onclick="seekerTab('profile',this)"><span class="icon">👤</span> My Profile</a></li>
+        <li><a href="#" onclick="seekerTab('applied',this)"><span class="icon">📋</span> Applied Jobs</a></li>
+        <li><a href="#" onclick="seekerTab('resume',this)"><span class="icon">📄</span> Resume</a></li>
+        <li><a href="#" onclick="showPage('home')"><span class="icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+    <main class="dashboard-content">
+      <!-- Overview -->
+      <div id="seeker-overview">
+        <h2>Dashboard Overview</h2>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="num">12</div><div class="label">Jobs Applied</div></div>
+          <div class="stat-card"><div class="num">5</div><div class="label">Interviews</div></div>
+          <div class="stat-card"><div class="num">3</div><div class="label">Offers Received</div></div>
+          <div class="stat-card"><div class="num">48</div><div class="label">Profile Views</div></div>
+        </div>
+        <div class="table-card">
+          <h3>Recent Applications</h3>
+          <table>
+            <thead><tr><th>Job Title</th><th>Company</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="seekerAppsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Profile -->
+      <div id="seeker-profile" style="display:none">
+        <h2>My Profile</h2>
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar">A</div>
+            <div><h3>Alex Johnson</h3><p>Full Stack Developer · New York, NY</p></div>
+          </div>
+          <div class="form-group"><label>Full Name</label><input type="text" value="Alex Johnson" /></div>
+          <div class="form-group"><label>Email</label><input type="email" value="alex@example.com" /></div>
+          <div class="form-group"><label>Phone</label><input type="text" value="+1 (555) 123-4567" /></div>
+          <div class="form-group"><label>Location</label><input type="text" value="New York, NY" /></div>
+          <div class="form-group"><label>Skills (comma separated)</label><input type="text" value="React, Node.js, Python, AWS, Docker" /></div>
+          <div class="form-group"><label>Experience</label>
+            <textarea>5 years of full-stack development experience. Worked at startups and Fortune 500 companies. Proficient in React, Node.js, and cloud technologies.</textarea>
+          </div>
+          <button class="btn btn-primary" onclick="showToast('Profile updated successfully!','success')">Save Changes</button>
+        </div>
+      </div>
+      <!-- Applied Jobs -->
+      <div id="seeker-applied" style="display:none">
+        <h2>Applied Jobs</h2>
+        <div class="table-card">
+          <table>
+            <thead><tr><th>Job Title</th><th>Company</th><th>Location</th><th>Applied</th><th>Status</th></tr></thead>
+            <tbody id="appliedJobsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Resume -->
+      <div id="seeker-resume" style="display:none">
+        <h2>Resume</h2>
+        <div class="form-card">
+          <div class="upload-area" onclick="showToast('Resume uploaded successfully!','success')">
+            <div class="icon">📤</div>
+            <p><strong>Click to upload</strong> or drag and drop</p>
+            <p>PDF, DOC, DOCX up to 5MB</p>
+          </div>
+          <div style="margin-top:1.5rem; padding:1rem; background:var(--light); border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+            <div><strong>📄 Alex_Johnson_Resume.pdf</strong><p style="font-size:0.8rem;color:var(--gray)">Uploaded 3 days ago · 245 KB</p></div>
+            <button class="btn btn-sm btn-outline">Download</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ==================== EMPLOYER DASHBOARD ==================== -->
+<div class="page" id="page-employer">
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <div class="avatar">T</div>
+        <h4>TechCorp Inc.</h4>
+        <p>Employer</p>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" onclick="employerTab('overview',this)"><span class="icon">🏠</span> Overview</a></li>
+        <li><a href="#" onclick="employerTab('post',this)"><span class="icon">➕</span> Post a Job</a></li>
+        <li><a href="#" onclick="employerTab('posted',this)"><span class="icon">📋</span> Posted Jobs</a></li>
+        <li><a href="#" onclick="employerTab('applicants',this)"><span class="icon">👥</span> Applicants</a></li>
+        <li><a href="#" onclick="showPage('home')"><span class="icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+    <main class="dashboard-content">
+      <!-- Overview -->
+      <div id="employer-overview">
+        <h2>Employer Dashboard</h2>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="num">8</div><div class="label">Active Jobs</div></div>
+          <div class="stat-card"><div class="num">134</div><div class="label">Total Applicants</div></div>
+          <div class="stat-card"><div class="num">22</div><div class="label">Shortlisted</div></div>
+          <div class="stat-card"><div class="num">5</div><div class="label">Hired</div></div>
+        </div>
+        <div class="table-card">
+          <h3>Recent Applicants</h3>
+          <table>
+            <thead><tr><th>Name</th><th>Applied For</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="employerApplicantsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Post Job -->
+      <div id="employer-post" style="display:none">
+        <h2>Post a New Job</h2>
+        <div class="form-card">
+          <div class="form-row">
+            <div class="form-group"><label>Job Title</label><input type="text" placeholder="e.g. Senior React Developer" /></div>
+            <div class="form-group"><label>Category</label>
+              <select><option>Technology</option><option>Design</option><option>Marketing</option><option>Finance</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Location</label><input type="text" placeholder="e.g. New York, NY" /></div>
+            <div class="form-group"><label>Job Type</label>
+              <select><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Remote</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Salary Min (₹)</label><input type="number" placeholder="800000" /></div>
+            <div class="form-group"><label>Salary Max (₹)</label><input type="number" placeholder="1200000" /></div>
+          </div>
+          <div class="form-group"><label>Required Skills</label><input type="text" placeholder="React, Node.js, AWS..." /></div>
+          <div class="form-group"><label>Job Description</label><textarea placeholder="Describe the role, responsibilities, and requirements..."></textarea></div>
+          <button class="btn btn-primary" onclick="showToast('Job posted successfully!','success')">Post Job</button>
+        </div>
+      </div>
+      <!-- Posted Jobs -->
+      <div id="employer-posted" style="display:none">
+        <h2>Posted Jobs</h2>
+        <div class="table-card">
+          <table>
+            <thead><tr><th>Title</th><th>Location</th><th>Type</th><th>Applicants</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="postedJobsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Applicants -->
+      <div id="employer-applicants" style="display:none">
+        <h2>All Applicants</h2>
+        <div class="table-card">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Applied For</th><th>Skills</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="allApplicantsTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ==================== POST JOB (PUBLIC) ==================== -->
+<div class="page" id="page-post-job">
+  <div class="auth-container" style="align-items:flex-start; padding-top:3rem;">
+    <div class="auth-card" style="max-width:560px;">
+      <h2>Post a Job</h2>
+      <p>Reach thousands of qualified candidates</p>
+      <div class="form-row">
+        <div class="form-group"><label>Job Title</label><input type="text" placeholder="e.g. Frontend Developer" /></div>
+        <div class="form-group"><label>Company Name</label><input type="text" placeholder="Your company" /></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Location</label><input type="text" placeholder="City, State" /></div>
+        <div class="form-group"><label>Job Type</label>
+          <select><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Remote</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label>Salary Range</label><input type="text" placeholder="e.g. ₹8L – ₹10L per annum" /></div>
+      <div class="form-group"><label>Required Skills</label><input type="text" placeholder="e.g. React, Python, SQL" /></div>
+      <div class="form-group"><label>Job Description</label><textarea placeholder="Describe the role..."></textarea></div>
+      <button class="btn btn-primary" style="width:100%" onclick="showToast('Job posted! Redirecting to login...','success'); setTimeout(()=>showPage('login'),1500)">Post Job</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== ADMIN PANEL ==================== -->
+<div class="page" id="page-admin">
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <div class="avatar">AD</div>
+        <h4>Admin</h4>
+        <p>Super Admin</p>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" onclick="adminTab('overview',this)"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="#" onclick="adminTab('users',this)"><span class="icon">👥</span> Users</a></li>
+        <li><a href="#" onclick="adminTab('jobs',this)"><span class="icon">💼</span> Job Posts</a></li>
+        <li><a href="#" onclick="showPage('home')"><span class="icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+    <main class="dashboard-content">
+      <!-- Overview -->
+      <div id="admin-overview">
+        <h2>Admin Dashboard</h2>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="num">1,284</div><div class="label">Total Users</div></div>
+          <div class="stat-card"><div class="num">342</div><div class="label">Total Jobs</div></div>
+          <div class="stat-card"><div class="num">89</div><div class="label">Employers</div></div>
+          <div class="stat-card"><div class="num">1,195</div><div class="label">Job Seekers</div></div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="table-card">
+            <h3>Recent Users</h3>
+            <table>
+              <thead><tr><th>Name</th><th>Role</th><th>Joined</th></tr></thead>
+              <tbody id="adminUsersPreview"></tbody>
+            </table>
+          </div>
+          <div class="table-card">
+            <h3>Recent Jobs</h3>
+            <table>
+              <thead><tr><th>Title</th><th>Company</th><th>Status</th></tr></thead>
+              <tbody id="adminJobsPreview"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Users -->
+      <div id="admin-users" style="display:none">
+        <h2>All Users</h2>
+        <div class="table-card">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="adminUsersTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Jobs -->
+      <div id="admin-jobs" style="display:none">
+        <h2>All Job Posts</h2>
+        <div class="table-card">
+          <table>
+            <thead><tr><th>Title</th><th>Company</th><th>Location</th><th>Type</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="adminJobsTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
